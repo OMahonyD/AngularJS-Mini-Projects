@@ -1,0 +1,42 @@
+
+body {
+	background: #1b85b8;
+	font-size: 1.2em;
+}
+
+
+#main {
+	display: block;
+	margin: 5em auto;
+	text-align: center;
+	font-family: 'Baloo Bhaina', cursive;
+	width: 500px;
+	height: 400px;
+	
+}
+
+
+a {
+	text-decoration: none;
+	padding: 10px 20px 10px 20px;
+	width: 400px;
+	background: #c3cb71;
+	color: #1b85b8;
+}
+
+a:hover, a:focus {
+	background: #1b85b8;
+	color: #c3cb71;
+	border: 2px solid #c3cb71;
+	-moz-transition: all 0.8s ease;/* Firefox */
+	-webkit-transition: all 0.8s ease;/* WebKit */
+	transition: all 0.8s ease;/* Standard */
+	
+}
+
+.clickInstruction {
+	background: #c3cb71;
+	color: #1b85b8;
+	margin-top: 50px;
+	animation-delay: 0.3s;
+}
