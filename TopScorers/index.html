@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>scorerApp</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+		var scorerApp = angular.module('scorerApp', []);
+	
+		scorerApp.controller('scorer', function($scope){
+			$scope.Title = "Premier League Top Scorers 16/17";
+		});
+		
+		scorerApp.controller('footballer', function($scope){
+			$scope.players = [
+			{player: 'Harry Kane', 
+			team: 'Tottenham Hotspur', 
+			crestURL: "https://upload.wikimedia.org/wikipedia/en/0/0c/Tottenham_Hotspur_crest.png",
+			goals: 19},
+			{player: 'Romelu Lukaku', 
+			team: 'Everton', 
+			crestURL: "http://pogmogoal.com/wp-content/uploads/everton-crest-old.jpg",
+			goals: 18},
+			{player: 'Diego Costa', 
+			team: 'Chelsea', 
+			crestURL: "http://www.chelseafc.com/content/cfc/en/ref/clubs/en/chelsea.img.png",
+			goals: 17},
+			{player: 'Alexi Sanchez', 
+			team: 'Arsenal', 
+			crestURL: "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/870px-Arsenal_FC.svg.png",
+			goals: 15},
+			{player: 'Zlatan Ibrahimovic', 
+			team: 'Manchester United', 
+			crestURL: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1010px-Manchester_United_FC_crest.svg.png",
+			goals: 14}
+			]
+		});
+		
+	</script>
+
+<body ng-app="scorerApp">
+<div id="main">
+	<div ng-controller="scorer">
+		<h2>{{Title}}</h2>
+	</div>
+
+	<table ng-controller="footballer">
+		<tr><th>Player</th><th>Team</th><th>Crest</th><th>Goals</th></tr>
+		<tr ng-repeat="x in players">
+			<td>{{x.player}}</td>
+			<td>{{x.team}}</td>
+			<td><img ng-src="{{x.crestURL}}" alt="team crest"/></td>
+			<td>{{x.goals}}</td>
+		</tr>
+	</table>
+
+
+</div><!-- end main	-->
+</body>
+</html>
